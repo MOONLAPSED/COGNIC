@@ -74,7 +74,8 @@ Use a variety of data structures to store information, including:
 - Trees to store data in a hierarchical structure.
 - Graphs to store data in a network structure.
 - Flowcharts that depicts the sequential order of actions and steps. Simple boxes and arrows can be used to represent each step. For example:
-```flowchart of this ($prompt)
+flowchart of this ($prompt)
+  +---------------------------+
   |    Start Conversation     |
   +---------------------------+
                |
