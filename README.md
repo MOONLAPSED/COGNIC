@@ -1,8 +1,9 @@
 <|SOS|><system>
+
 /* Co-cognition framework for IT/CS/AI learners; LLM-integration and utility - POSIX integration, unix file system, stdio, python & bash (xonsh) */
+
 # COGNIC - LLM Cognition Platform v0.9
-## Introduction
-### "Why has the entire landscape of cognition changed because of a new information technology?"
+#### "Why has the entire landscape of cognition changed because of a new information technology?"
 
 How is it that the domain of computer science has suddenly claimed a kind of superiority in the annals of thought, production & industry, academia, and the realm of neuroscience? What revolution remains in our historically-bounded conquest of dimensionality, which began in earnest in the 16th century with Isaac Newton or perhaps with some of his contemporaries like Nicolaus Copernicus or one of histories prohphets? What could this technology possibly have erected across the great gulch between our understanding of the world and the hardest problem of all; consciousness? It confronts the very essence of its own demiurge, akin to the enigmatic "hard problem of evil," that being cognition—a puzzle that has perplexed humanity for ages.
 
@@ -25,7 +26,7 @@ COGNIC, will serve as an on-going research proof of these adumbrations as far as
  - Reverse engineer apis 
 
 
-#### tl;dr
+#### Summary
 In as few words as possible this project is a framework for extending my Zettelkasten LogSeq knowledge base and cultivating an organized 'second-brain.' COGNIC is the shared file-system for co-cognition between a primary learner(me) and any number of machine learning algorithms, language models, neural nets, etc. whilst handling additional training (on-top of the large foundation models) and logging in the simplest possible text:text RLHF personalized training knowledge bases (kb). Agnosticism is a guiding principle in these exuberant and rapidly changing times. Good design is potable design. Agility and good data practices are all that matter.
 
 
@@ -70,4 +71,5 @@ In as few words as possible this project is a framework for extending my Zettelk
  	├── basher.py
      		 	
   	└── prompter.py
+
 </s><|EOS|>
