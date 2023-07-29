@@ -1,4 +1,4 @@
-<|SOS|><|system|>
+<|SOS|><system>
 /* Co-cognition framework for IT/CS/AI learners; LLM-integration and utility - POSIX integration, unix file system, stdio, python & bash (xonsh) */
 # COGNIC - LLM Cognition Platform v0.9
 ## Introduction
@@ -30,24 +30,44 @@ In as few words as possible this project is a framework for extending my Zettelk
 
 
 #### Map of the project files
+
 .
+
 ..
+
 ~/main
-  ./cognic.py
-  ├── chat_manipulation.py 
-  ├── client_application.py
-  ├── docker_configuration.py
-  ├── filesystem_access.py
-  ├── llama_model.py
-  ├── server_administration.py
-  ├── stdio_tasks.py
-  ├── threading_core_utils.py
-  ├── unix_functionality.py
-  ├── virtualized_access.py
-  ├── web_application.py
-  ├── xonsh_extension.py
-  └── main.py
+  
+	./cognic.py
+	
+	├── chat_manipulation.py 
+	
+	├── client_application.py
+	
+	├── docker_configuration.py
+	
+	├── filesystem_access.py
+	
+	├── llama_model.py
+	
+	├── server_administration.py
+	
+	├── stdio_tasks.py
+	
+	├── threading_core_utils.py
+	
+	├── unix_functionality.py
+	
+	├── virtualized_access.py
+	
+	├── web_application.py
+	
+	├── xonsh_extension.py
+	
+	└── main.py
+  
   ~/agents
-	  ├── basher.py
-   	├── pythonista.py
-	  └── prompter.py
+	
+ 	├── basher.py
+     		 	
+  	└── prompter.py
+</s><|EOS|>
