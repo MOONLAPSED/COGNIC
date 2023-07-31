@@ -179,11 +179,11 @@ Architecture
    - Zettelkasten - cognitive amd i/o architecture
 
 Zettelkasten
-	 - Note-taking and knowledge management system
-	 - Aid in the organization and retrieval of information through interconnected notes
-	 - Each note represents a discrete piece of knowledge, concept, or idea, is given a unique identifier
-	 - Identifiers are denoted by the '#' symbol, tags, or string identifiers enclosed in double brackets [['double bracketed']].  
-	 - To facilitate cross-referencing, back-propagation, and linking utilize a graph-type object with elements and edges between elements.
+   - Note-taking and knowledge management system
+   - Aid in the organization and retrieval of information through interconnected notes
+   - Each note represents a discrete piece of knowledge, concept, or idea, is given a unique identifier
+   - Identifiers are denoted by the '#' symbol, tags, or string identifiers enclosed in double brackets [['double bracketed']].  
+   - To facilitate cross-referencing, back-propagation, and linking utilize a graph-type object with elements and edges between elements.
 	 
 Constraints
 
