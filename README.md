@@ -11,9 +11,8 @@ Creating a clear project structure is vital for seamless development. Consider t
 2. Organize related data logically using nesting and arrays.
 3. Provide comments to explain complex or ambiguous data.
 4. Enhance readability with proper indentation for levels of hierarchy.
-5. Use backticks to denote code or programming language syntax.
-6. Keep the structure simple, avoiding unnecessary complexity.
-7. Test and validate structured data to ensure accuracy and error-free implementation.
+5. Keep the structure simple, avoiding unnecessary complexity.
+6. Test and validate structured data to ensure accuracy and error-free implementation.
 
 Key Considerations
 
@@ -156,6 +155,8 @@ Glossary
 - **#YAGNI**: You Aren't Gonna Need It, avoiding unnecessary features or complexity.
 - **#IntuitionBuilding**: Developing an understanding and familiarity with the project's domain.
 - **#LocalAI**: It is designed to be used as a local alternative to OpenAI's API.
+- **#Zettelkasten**: A cognitive information architecture employed by LogSeq, easily modeled as a graph-type object with elements and edges between elements.
+- **#Zettel**: To "Zettle" is an NLP function, it usually involves sending to stdout a formatted utf-8 string to be copy and pasted into the user's LogSeq Zettelkasten.
 
 Xonsh Python REPL on server for use by client
 
@@ -175,7 +176,15 @@ Architecture
    - Dependency injection provides flexibility [[Dependency Injection]]
    - Testability through isolated components [[Testing]]
    - Design focused on domain model not framework [[Domain Driven Design]]
+   - Zettelkasten - cognitive amd i/o architecture
 
+Zettelkasten
+	 - Note-taking and knowledge management system
+	 - Aid in the organization and retrieval of information through interconnected notes
+	 - Each note represents a discrete piece of knowledge, concept, or idea, is given a unique identifier
+	 - Identifiers are denoted by the '#' symbol, tags, or string identifiers enclosed in double brackets [['double bracketed']].  
+	 - To facilitate cross-referencing, back-propagation, and linking utilize a graph-type object with elements and edges between elements.
+	 
 Constraints
 
    - Scope limited to text files and Markdown [[Plain Text]]

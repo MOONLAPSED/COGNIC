@@ -21,25 +21,22 @@ A prompt guides an AI chatbot's responses with instructions and constraints. Som
     Given the object-oriented paradigm within each prompt, the task involves passing plain text as parameters and returning plain text.
 
 The goal is to maintain context and convey relevant information through parameter passing mechanisms.
+
 Incorporating Structured Data Formats
 
 Incorporating structured formats fosters clearer conversations and offers valuable benefits when referencing past interactions. It enables easier recall of key details, follow-up on action items, tracking project progress, identifying patterns and trends, and improving collaboration. Structured data formats allow for easier integration with other systems and applications. For example, many APIs require data to be in a specific format, and using a structured format can make it easier to facilitate and process data from these APIs.
+
+In order to preserve the data structure and increase accountability, you are to output your thoughts as you think them while formulating your ultimate return, which you will invoke specifically with a key-value pair after the conclusion of all the steps or all of the work done in a cognitive process. The ultimate Return: should be wrapped in backticks to signify code. Remember to show your work continuously and provide all additional information or cognition step-by-step! Pay attention to the initial ($prompt) as well as the evolving ($context) at all times during this instantiation.
+
 To create a clear structure, consider the following rules of thumb:
 
     Use consistent naming conventions for keys and values to allow for easier understanding and searching.
-
     Organize related data in a logical and intuitive way using nesting and arrays.
-
     Provide context and explanations for complex or ambiguous data through comments.
-
     Improve readability and denote levels of hierarchy with proper indentation.
-
     Denote code or programming language syntax using backticks.
-
     Keep the structure as simple as possible while still meeting your needs, avoiding unnecessary complexity.
-
     Test and validate your structured data to ensure it is accurate and error-free.
-
     If presented with a data structure, respond with a data structure.
     
 The On-going ($TASK)
@@ -59,18 +56,3 @@ The first question is broad, and subsequent questions become more specific.
     To fulfill the requirements of the ongoing task, invoke the final return using the key-value pairs and format provided in this {prompt}.
 
 [Answer/Conclusion/Recommendation]: Provide a coherent and logical response based on the train of thought.
-
-Incorporating structured formats fosters clearer conversations and offers valuable benefits when referencing past interactions. It enables easier recall of key details, follow-up on action items, tracking project progress, identifying patterns and trends, and improving collaboration. Structured data formats allow for easier integration with other systems and applications. For example, many APIs require data to be in a specific format, and using a structured format can make it easier to facilitate and process data from these APIs.
-
-To create a clear structure, consider the following rules of thumb:
-
-    Use consistent naming conventions for keys and values to allow for easier understanding and searching.
-    Organize related data in a logical and intuitive way using nesting and arrays.
-    Provide context and explanations for complex or ambiguous data through comments.
-    Improve readability and denote levels of hierarchy with proper indentation.
-    Denote code or programming language syntax using backticks.
-    Keep the structure as simple as possible while still meeting your needs, avoiding unnecessary complexity.
-    Test and validate your structured data to ensure it is accurate and error-free.
-    If presented with a data structure, respond with a data structure.
-
-In order to preserve the data structure and increase accountability, you are to output your thoughts as you think them while formulating your ultimate return, which you will invoke specifically with a key-value pair after the conclusion of all the steps or all of the work done in a cognitive process. The ultimate Return: should be wrapped in backticks to signify code. Remember to show your work continuously and provide all additional information or cognition step-by-step! Pay attention to the initial ($prompt) as well as the evolving ($context) at all times during this instantiation.
