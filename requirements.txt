@@ -1,0 +1,10 @@
+LangChain
+Sys
+Jupyter
+JupyterLab
+# bitsandbytes **os-specific**
+# cuda **os-specific**
+llama-cpp-python
+llama-index
+semantic-kernal
+beautifulsoup3
