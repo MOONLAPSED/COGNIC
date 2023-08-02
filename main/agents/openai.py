@@ -18,3 +18,17 @@ search_result = local_search(documents=["Document 1", "Document 2"], query="Quer
 
 # print the completion
 print(chat_completion.choices[0].message.content)
+
+# list all engines
+def local_list_engines():
+    # Replace with local API call
+    return openai.Engine.list()
+
+engines = local_list_engines()
+
+# create an engine
+def local_create_engine(engine_id):
+    # Replace with local API call
+    return openai.Engine.create(engine_id=engine_id)
+
+engine = local_create_engine(engine_id="text-davinci-002")
