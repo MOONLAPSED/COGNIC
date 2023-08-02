@@ -8,3 +8,11 @@ llama-cpp-python
 llama-index
 semantic-kernal
 beautifulsoup3
+# localAI https://localai.io/basics/getting_started/index.html
+git https://github.com/go-skynet/LocalAI.git
+requests
+flask
+abc
+openai
+# LangChain Serve https://github.com/jina-ai/langchain-serve/blob/main/examples/rest/README.md
+git https://github.com/jina-ai/langchain-serve.git
