@@ -1,3 +1,5 @@
 LocalAI/
 .scratch/
 main/agents/__pycache__/
+scoop/
+WezTerm/

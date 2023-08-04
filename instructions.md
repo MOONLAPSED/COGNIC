@@ -4,8 +4,6 @@
 
   cp ~/your_model.bin ~/LocalAI/models/your_model.bin
 
-cd LocalAI
-
 python3 -m pip install -r requirements.txt
 
 cd modules
@@ -27,7 +25,6 @@ curl http://localhost:8080/v1/completions -H "Content-Type: application/json" -d
 
 ><something about jedi>
 
-localai.py initialized, model: orca-mini-7b.ggmlv3.q4_0.bin
-
-drop-in replacement for gpt-3.5 api (https://beta.openai.com/docs/api-reference/completions/create) >>> https://localai.io/basics/getting_started/index.html
+### localai.py initialized, model: orca-mini-7b.ggmlv3.q4_0.bin
+/* drop-in replacement for gpt-3.5 api (https://beta.openai.com/docs/api-reference/completions/create) >>> https://localai.io/basics/getting_started/index.html */
 

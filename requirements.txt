@@ -16,3 +16,5 @@ abc
 openai
 # LangChain Serve https://github.com/jina-ai/langchain-serve/blob/main/examples/rest/README.md
 git https://github.com/jina-ai/langchain-serve.git
+# Optional: scoop for windows (drop-in apt-get replacement)
+# WezTerm, kitty, etc. for windows
