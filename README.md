@@ -1,6 +1,8 @@
 <|SOS|>
 `Co-cognition framework for IT/CS/AI learners; LLM-integration and utility - POSIX integration, unix file system, stdio, python & bash (xonsh)`
 
+A better version has already come out. See: /silvanmelchior/IncognitoPilot & /e2b-dev/chatgpt-plugin
+
 # COGNIC v0.92 - NLP+AI-assisted CS+IT learning project(s)
 
 ## Rules of Thumb & Heuristics
