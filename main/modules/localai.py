@@ -1,6 +1,20 @@
-import openai
+import requests, openai, os
+from dotenv import load_dotenv
 
+load_dotenv()
 openai.api_base = "http://localhost:8080/v1"
+rapidapi = os.getenv("rapidapi_key")
+prompt = ["Write a python program which provides the dot product of its arguments using only os and sys no imports"]
+headers = {
+    "Content-Type": "application/json",
+}
+data = {
+    "model": "orca-mini-7b.ggmlv3.q4_0.bin",
+    "prompt": prompt,
+    "temperature": 0.2
+}
+response = requests.post(url, headers=headers, json=data)
+print(response.text)
 
 # create a chat completion
 def local_chat_completion(model, messages):
@@ -32,3 +46,4 @@ def local_create_engine(engine_id):
     return openai.Engine.create(engine_id=engine_id)
 
 engine = local_create_engine(engine_id="orca-mini-7b.ggmlv3.q4_0.bin")
+
