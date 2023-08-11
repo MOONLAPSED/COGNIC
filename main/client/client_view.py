@@ -18,3 +18,11 @@ class ClientView:
         self.model.set_output(output)
         self.model.set_errors(errors)
         self.render()
+    
+    def display_functions_and_methods(self):
+        # This function should be implemented to display the available functions and class methods
+        print("Available functions and class methods:")
+    
+    def select_function_or_method(self):
+        # This function should be implemented to allow the user to select a function or method
+        print("Please select a function or method:")
