@@ -12,7 +12,7 @@ class Controller:
     async def handle_input(self, code_snippet):
         try:
             # Execute the code snippet on the server
-            output, error = await execute_code(code_snippet)
+            output, error = await self.execute_code(code_snippet)
 
             # Update the model with the output and error
             self.model.update_model(output, error)
@@ -35,7 +35,7 @@ class Controller:
     async def receive_request(self):
         # This function should be implemented to receive code snippets from the client
         # For now, we'll just return a dummy code snippet
-        return "print('Hello, World!')"
+        return await self.get_code_snippet()
 
 if __name__ == "__main__":
     controller = Controller()
