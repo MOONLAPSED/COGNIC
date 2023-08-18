@@ -106,17 +106,17 @@ jobs:
           fi
 
           echo "REPLY=$REPLY" >> $GITHUB_ENV
-      - name: Comment with AI Output
-        uses: actions/github-script@v6
-        # Note, issue and PR are the same thing in GitHub's eyes
-        with:
-          script: |
-            const REPLY = process.env.REPLY;
-            if (REPLY) {
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: `🤖: ${REPLY}`
-              });
-            }
+          - name: Comment with AI Output
+            uses: actions/github-script@v6
+            # Note, issue and PR are the same thing in GitHub's eyes
+            with:
+              script: |
+                const REPLY = process.env.REPLY;
+                if (REPLY) {
+                  github.issues.createComment({
+                    issue_number: context.issue.number,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    body: `🤖: ${REPLY}`
+                  });
+                }
