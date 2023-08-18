@@ -111,4 +111,12 @@ jobs:
         # Note, issue and PR are the same thing in GitHub's eyes
         with:
           script: |
-            const REPLY = process.env
+            const REPLY = process.env.REPLY;
+            if (REPLY) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `🤖: ${REPLY}`
+              });
+            }
