@@ -84,39 +84,40 @@ jobs:
           sleep 40
           kubectl get pods -n default
 
-      - name: Perform AI Functionality
-        run: |
-          kubectl port-forward svc/ialacol 8000:8000 &
-          echo "Wait for port-forward to be ready"
-          sleep 5
-
-          curl http://localhost:8000/v1/models
-
-          RESPONSE=$(curl -X POST -H 'Content-Type: application/json' -d '{ "messages": [{"role": "user", "content": "Welcome, valued member of the focus group! We value your time and your opinion in this CI/CD pipeline."}], "temperature":"'${TEMPERATURE}'", "model": "'${DEFAULT_MODEL_FILE}'"}' http://localhost:8000/v1/chat/completions)
-          echo "$RESPONSE"
-
-          REPLY=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
-          echo "$REPLY"
-
-          kubectl logs --selector app.kubernetes.io/name=$HELM_RELEASE_NAME -n default
-
-          if [ -z "$REPLY" ]; then
-            echo "No reply from AI"
-            exit 1
-          fi
-
-          echo "REPLY=$REPLY" >> $GITHUB_ENV
-          - name: Comment with AI Output
-            uses: actions/github-script@v6
-            # Note, issue and PR are the same thing in GitHub's eyes
-            with:
-              script: |
-                const REPLY = process.env.REPLY;
-                if (REPLY) {
-                  github.issues.createComment({
-                    issue_number: context.issue.number,
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    body: `🤖: ${REPLY}`
-                  });
-                }
+            - name: Perform AI Functionality
+              run: |
+                kubectl port-forward svc/ialacol 8000:8000 &
+                echo "Wait for port-forward to be ready"
+                sleep 5
+            
+                curl http://localhost:8000/v1/models
+            
+                RESPONSE=$(curl -X POST -H 'Content-Type: application/json' -d '{ "messages": [{"role": "user", "content": "Welcome, valued member of the focus group! We value your time and your opinion in this CI/CD pipeline."}], "temperature":"'${TEMPERATURE}'", "model": "'${DEFAULT_MODEL_FILE}'"}' http://localhost:8000/v1/chat/completions)
+                echo "$RESPONSE"
+            
+                REPLY=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
+                echo "$REPLY"
+            
+                kubectl logs --selector app.kubernetes.io/name=$HELM_RELEASE_NAME -n default
+            
+                if [ -z "$REPLY" ]; then
+                  echo "No reply from AI"
+                  exit 1
+                fi
+            
+                echo "REPLY=$REPLY" >> $GITHUB_ENV
+            
+            - name: Comment with AI Output
+              uses: actions/github-script@v6
+              # Note, issue and PR are the same thing in GitHub's eyes
+              with:
+                script: |
+                  const REPLY = process.env.REPLY;
+                  if (REPLY) {
+                    github.issues.createComment({
+                      issue_number: context.issue.number,
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      body: `🤖: ${REPLY}`
+                    });
+                  }
