@@ -1,7 +1,5 @@
 transformers
 transformers[cuda]
-transformers[question-answering]
-transformers[text-generation]
 ctransformers
 jupyter
 jupyterLab
@@ -19,11 +17,7 @@ docker
 xonsh
 openai
 openai[embeddings]
-openai[datalib]
-openai[api]
 playwright
-playwright[webkit]
-playwright[chromium]
 django[all] # see struct.txt for pre-pip structs
 mpi4py
 huggingface_hub
@@ -35,7 +29,7 @@ aiohttp
 litellm
 openllm
 agent-protocol # AKA e2B agent-protocol  ## https://agentprotocol.ai/sdks/python
-
+huggingface_hub
 # <!---- nvidia ---->
 # torch ## CONDA USERS DO NOT PIP INSTALL TORCH!!! Do the following:
 # conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch-nightly -c nvidia //windows - rtx/geforce + CONDA 
