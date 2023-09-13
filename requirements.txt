@@ -38,6 +38,8 @@ langchain[all]  ## see struct.txt for pre-pip structs
 # py -m pip install nvidia-cuda-runtime-cu12
 # bitsandbytes **os-specific**
 # cuda **os-specific**
+# apt-get update && apt-get install -y libsndfile1 ffmpeg
+nemo_toolkit['all'] ## see preq above
 
 
 # <!---- gh_apps ---->
