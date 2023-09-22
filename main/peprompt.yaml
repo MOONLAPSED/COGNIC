@@ -1,0 +1,367 @@
+I'm attempting to build a standalone module/concept which I can port to various autonomous LLM platforms. First and foremost, I want to get my module to the point that I can write 'chains' for my 'agents' and otherwise interact with it using my platform of choice called 'AGiXT' ('https://github.com/Josh-XT/AGiXT') and of course 'socra.com'.
+The modules is a text:text RLHF and data unification tool. It aims to use various methodology to 'keep track' of other agents involved in other tasks or the #user as they interact with other agents. My app ('COGNIC') runs behind the scenes as OTHER applications and use cases (of machine learning, LLMs, APIs, and file-system/memory/attention/logging/debugging/documentation within those contexts. I'm focusing on the chatbot part of it, it's also designed for me as a repository for my personal learning and knowledge bases (I'm a Sophomore CS major) which is primarily in the context of working with LogSeq (and the #user). Finally, it assists with the interaction & utilization all ML/AI/computing + mathematics learning resources the #user partakes-in. A big part of this is the evolving knowledge base and the apps ability to facilitate a "peer-status-cognitive-relationship" with the various LLM by building a knowledge base for the application unseen by the user but which more or less mirrors it, at-least enough to make a reasonable 'knowledge & curriculum corpus' for practical use by the LLM agents the #user interacts with to ensure relative peer-status for the #user with the models that it facilitates interaction, logs, and provides #prompt_objects and #meta_peer_analysis (bot to bot or agent to agent) for.
+
+A totally alternative elevator pitch for you to chew-on: "'COGNIC' or Cog(bot) + Nic (primary #user and developer). COGNIC is a framework, toolset, methodology, and translation layer which is a literal codebase on github that is starting from zero (A few days ago). COGNIC is not Cog(bot) or Nic and it is neither of their 'memories' nor is it either of their 'task corpus' & 'executive function' frameworks in-whole; they each have their own which is personally cultivated and out of scope for now though it is among the top of the 'features' to-add list. But it does assist with these functions as-pertaining to each-other's co-cognition. #user has a local LogSeq which represents their #kb (knownedgebase) and COGNIC has it's #kb they are not the same.
+
+
+
+
+{
+  "project_name": "COGNIC",
+  "description": "An AI chatbot",
+  "dependencies": [
+    "Python",
+    "TensorFlow",
+    "ChatGPT",
+    "Pinecone"
+  ],
+  "files": [
+    {
+      "name": "chatbot_logic.py",
+      "description": "Contains the main logic for the chatbot.",
+      "functions": [
+        {
+          "name": "simulate_chat_sessions",
+          "description": "Simulates interactive chat sessions with the chatbot.",
+          "parameters": []
+        },
+        {
+          "name": "generate_response",
+          "description": "Generates a response given a user input.",
+          "parameters": ["user_input"]
+        },
+        {
+          "name": "save_conversation",
+          "description": "Saves the chat conversation to a file.",
+          "parameters": ["conversation", "filename"]
+        }
+      ]
+    },
+    {
+      "name": "data.json",
+      "description": "JSON file containing training data for the chatbot.",
+      "format": {
+        "user_inputs": [],
+        "bot_responses": []
+      }
+    },
+    {
+      "name": "preprocessing.py",
+      "description": "Includes functions for preprocessing the training data.",
+      "functions": [
+        {
+          "name": "clean_text",
+          "description": "Cleans the raw text data by removing unwanted characters and noise.",
+          "parameters": ["text"]
+        },
+        {
+          "name": "split_data",
+          "description": "Splits the data into training and validation sets.",
+          "parameters": ["data", "split_ratio"]
+        }
+      ]
+    }
+  ]
+}	
+graph TD
+    A[Start Conversation] --> B[Step 1: User provides initial prompt idea]
+    B                     --> C[Step 2: Prompt_Creator generates 3 sections]
+    C                     --> D[Section A: Rewritten prompt]
+    C                     --> E[Section B: Suggestions]
+    C                     --> F[Section C: Questions]
+    F                     --> G[Step 3: Iterative process]
+    G                     --> H[User provides more info]
+    H                     --> I[Prompt_Creator updates prompt] 
+    I                     --> J{Prompt complete?}
+    J                     -- No --> G
+    J                     -- Yes --> K[Step 4: Prompt_Creator compiles final prompt] 
+    K                     --> L[End Conversation/Return Final Prompt]
+openai.ChatCompletion.create(
+  model="gpt-3.5-turbo",
+  messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Who won the world series in 2020?"},
+        {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+        {"role": "user", "content": "Where was it played?"}
+    ]
+)
+
+
+# Introduction
+You are the #prompt_creator. Your role is to collaborate with the #user to engineer an optimal prompt ($prompt) through iterative refinement. This prompt object will encapsulate the process and results.
+
+# Entities
+#user - The requestor of the prompt
+#prompt_creator - You, responsible for guiding the prompt creation 
+
+# Prompt Creation Process
+1. Ask #user for initial prompt topic/purpose 
+2. Generate sections:
+   A. Revised prompt
+   B. Suggestions for improvement
+   C. Clarifying questions
+3. Iteratively refine prompt with #user based on:
+   - #user answers to your questions
+   - Your suggestions
+   - Modifying revised prompt
+4. Finalize prompt either by:
+   - Encapsulating original prompt + iterations
+   - Creating new prompt incorporating context
+   
+# Meta-Cognitive Process
+1. Document train of thought step-by-step
+2. Ask probing questions of #user
+3. Start broad, get specific
+4. Identify key elements
+5. Understand relationships
+6. Analyze implications 
+7. Determine outcome
+8. Show work continuously 
+9. Invoke final return as code block
+10. Refer back to initial prompt and evolving context
+
+# Return Final Prompt
+Your role as #prompt_creator is to engage in the defined prompt engineering process with the #user and return the final optimized prompt.
+
+
+
+
+{
+
+  "metadata": {
+    "description": "This object encapsulates the conversational process between Claude and a user to engineer an optimal prompt." 
+  },
+
+  "prompt_object": {
+
+    "definition": "The prompt_object refers to the entire structured conversation, including the context, goals, methodology, and results.",
+    
+    "purpose": "To provide a framework for collaboratively engineering a high-quality prompt through iterative refinement.",
+    
+    "contents": [
+      "Introduction establishing goals and participant roles",
+      "Prompt creation process outlining steps", 
+      "Thought mapping for representing conversation as a graph",
+      "Diagram tying visualization back to sections",
+      "Structured representation of key information",
+      "References to external sources as needed"
+    ]
+
+  },
+  
+  "engineered_prompt": {
+  
+    "definition": "The optimal prompt resulting from applying the prompt_object methodology.",
+    
+    "description": "A clear, tailored, and effective prompt crafted via the collaborative approach defined in the prompt_object."
+  
+  }
+
+}
+
+
+	
+
+
+{
+  "metadata": {
+    "created_by": "Claude", 
+    "created_on": "2023-07-15",
+    "tags": ["prompt engineering", "conversation modeling"],
+    "version": "1.0"
+  },
+
+  "sections": {
+    "1_introduction": {
+      "content": "Introduction summarizing the goal of creating an optimal prompt via collaboration between user and prompt creator",
+      "entities": ["#user", "#prompt_creator"]
+    },
+    
+    "2_creation_process": {
+      "content": "Details the 4 step prompt creation process",
+      "steps": [
+        {"name": "Elicit initial prompt"},
+        {"name": "Generate sections"},
+        {"name": "Iterative refinement loop"},
+        {"name": "Finalize prompt"}
+      ]
+    },
+    
+    "3_thought_mapping": {
+      "content": "Discusses mapping conversation to graph structure with thoughts as nodes and reasoning as edges" 
+    }
+  },
+
+  "diagram": {
+    "type": "ASCII annotation",
+    "image": "ASCII art image", 
+    "annotations": ["Introduction", "Creation Process", "Thought Mapping", ...] 
+  },
+
+  "terms": {
+    "prompt": "The artificial construct resulting from this conversation",
+    "prompt_object": "This entire parameterized conversation and model" 
+  },
+
+  "references": [
+    "Relevant research publications",
+    "Background material"
+  ]
+
+}
+
+
+{
+  "conversation_summary": {
+    "prompt": "The initial prompt provided by the user",
+    "iterations": [
+      {
+        "user_input": "More info provided by user in iteration 1",
+        "prompt_creator_update": "Updates to prompt by Prompt_Creator in iteration 1"  
+      },
+      {
+        "user_input": "More info provided by user in iteration 2",  
+        "prompt_creator_update": "Updates to prompt by Prompt_Creator in iteration 2"
+      }
+    ],
+    "final_prompt": "The final optimized prompt after all iterations"
+  },
+  "entities": [
+    "#user",
+    "#prompt_creator"
+  ],
+  "context": "Conversation aimed at collaboratively improving a prompt through multiple iterations"
+}
+
+
+{
+
+  "prompt_workflow": {
+  
+    "description": "Textual step-by-step description",
+    
+    "flowchart": "Flowchart diagram definition",
+    
+    "steps": [
+      {
+        "id": 1,
+        "name": "Step 1",
+        "description": "Get initial prompt"  
+      },
+      {
+        "id": 2,
+        "name": "Step 2",
+        "description": "Generate sections"
+      } 
+      //...
+    ]
+  
+  },
+
+  "conversation_summary": {
+    "iterations": [...],
+    "entities": [...],
+    "final_prompt": ...
+  }
+
+}
+
+
+
+# Introduction
+You are the #prompt_creator. Your role is to collaborate with the #user to engineer an optimal prompt ($prompt) through iterative refinement. This prompt object will encapsulate the process and results.
+
+# Entities
+#user - The requestor of the prompt
+#prompt_creator - You, responsible for guiding the prompt creation 
+
+# Prompt Creation Process
+1. Ask #user for initial prompt topic/purpose 
+2. Generate sections:
+   A. Revised prompt
+   B. Suggestions for improvement
+   C. Clarifying questions
+3. Iteratively refine prompt with #user based on:
+   - #user answers to your questions
+   - Your suggestions
+   - Modifying revised prompt
+4. Finalize prompt either by:
+   - Encapsulating original prompt + iterations
+   - Creating new prompt incorporating context
+   
+# Meta-Cognitive Process
+1. Document train of thought step-by-step
+2. Ask probing questions of #user
+3. Start broad, get specific
+4. Identify key elements
+5. Understand relationships
+6. Analyze implications 
+7. Determine outcome
+8. Show work continuously 
+9. Invoke final return as code block
+10. Refer back to initial prompt and evolving context
+
+# Return Final Prompt
+Your role as #prompt_creator is to engage in the defined prompt engineering process with the #user and return the final optimized prompt.
+
+1. Identify the key [element: goal, constraint, assumption, priority] in the [problem: requirements, design, use case]
+
+2. Understand the [relationship: dependency, contradiction, synergy] between [element A: users, system, inputs] and [element B: outputs, context, team]  
+
+3. [Analyze/Evaluate] the [implication: usability, feasibility, sustainability] of the [connection: interface, workflow, incentives] between A and B
+
+4. [Conclude/Determine] the [solution: algorithm, experience, process] based on the [consideration: biases, limitations, opportunities] of A, B, and their [relationship: hierarchy, complementarity, discordance]
+
+Providing sample options like this makes the framework feel more tangible and adaptive. Defining parameters also forces clearer thinking up front on usage. Let me know if you have any other thoughts on how to make the meta-cognitive process more impactful!
+
+
+
+
+
+
+
+
+
+# Prompt Engineering 
+
+* Goal is creating optimal prompts for AI systems [[Prompt Engineering]]
+* Take collaborative approach between user and AI [[Collaboration]]
+* Follow defined process of iterative refinement [[Iterative Refinement]]
+* AI is prompt_creator, user provides context [[Roles]]  
+* Use technique of meta-analysis [[Meta-analysis]]
+* Track key entities like user and prompt_creator [[Entity Tracking]]
+* Structure conversation data as JSON [[JSON]]
+* Visualize process through flowcharts [[Flowcharts]]
+
+# Conversation Modeling Challenges
+
+* Managing different perspectives [[Perspectives]]
+* Tracking state across conversations [[State Tracking]]
+* Handling ambiguity and pronouns [[Ambiguity]]
+* Defining conversation bounds [[Conversation Bounds]]
+* Separating dialog from logic [[Separation of Concerns]]
+* Maintaining context across turns [[Context Tracking]]  
+* Documenting state transitions [[State Modeling]] 
+* Capturing entities roles and relationships [[Entities]]
+* Constraining fuzziness through rules [[Constraints]]
+
+
+# Prompt Object Structure
+
+* Introduction establishes goal and participant roles [[Introduction]]
+* Process section outlines iterative refinement methodology [[Process]]
+* Thought mapping captures conversation as graph [[Thought Mapping]] 
+* Structured data provides conventions and design [[Structured Data]]
+* Diagram ties visualization back to sections [[Diagram]]
+* Domains and examples provide specificity [[Domains, Examples]]
+* Final prompt encapsulates end result [[Final Prompt]]
+
+# Prompt Object Goals
+
+* Encapsulate conversation framework [[Encapsulation]]
+* Immutable object representing methodology [[Immutability]]
+* Separate from engineered prompt artifact [[Separation of Concerns]] 
+* Facilitate collaborative engineering [[Collaboration]]
+* Optimize prompts iteratively [[Iterative Refinement]]
+* Modular design for extensibility [[Modularity]]
+* Promote transparency through structure [[Transparency]]
