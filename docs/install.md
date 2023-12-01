@@ -1,4 +1,6 @@
-wsl -d Ubuntu-22.04
+```
+
+- wsl -d Ubuntu-22.04
 cd ~
 sudo apt-get update && sudo apt-get upgrade
 sudo apt install wget
@@ -28,14 +30,15 @@ sudo apt install --fix-broken -y
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 google-chrome         // check chrome is working then quit
 // https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#2-install-the-appropriate-windows-vgpu-driver-for-wsl
-sudo apt-get install build-essential && sudo apt-get install man
-pages-dev
+// install nvidia driver on windows if you don't have it but then click "Install NVIDIA CUDA on Ubuntu" on the left-side
+sudo apt-get install build-essential && sudo apt-get install manpages-dev
 sudo apt install build-essential libglvnd-dev pkg-config
-cd Downloads/         //cp the installer to .nvidia or other mkdir
+mkdir .nvidia
 cd .nvidia            // or wherever you want to install
+// download files here per ubuntu.com --> go read the page you can't skip this
 sudo ./NVIDIA-Linux-x86_64-535.98.run
 sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y
-nvidia-smi
+nvidia-smi  // double-check nothin is weird 
 // https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu
 sudo apt-key del 7fa2af80
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
@@ -47,9 +50,12 @@ sudo apt-get -y install cuda
 sudo reboot
 wsl --setdefault Ubuntu-22.04
 wsl
-conda activate <envname>
+cd ~
+conda activate <envname> (3ten)
 pip3 install torch torchvision torchaudio // vanilla
 pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121   // my fave flavor (rtx3080 on ryzen 5600x)
+conda install cudatoolkit (conda env is active)
+# ---
 git clone https://github.com/oobabooga/text-generation-webui
 cd text-generation-webui
 pip install -r requirements.txt
@@ -68,11 +74,23 @@ pip install -r requirements.txt
 cd /home/yourname/miniconda3/envs/textgen/lib/python3.10/site-packages/bitsandbytes/
 cp libbitsandbytes_cuda120.so libbitsandbytes_cpu.so
 cd -
-conda install cudatoolkit
 python server.py --listen --model llama2.7b.llongma.ggml_v3.q4_K_M.bin --lora alpaca-lora-7b  --load-in-8bit
+# ---
 // https://localai.io/basics/getting_started/
 git clone https://github.com/go-skynet/LocalAI
 cd LocalAI
 cp your-model.bin models/
 docker-compose up -d --pull always
-// docker-compose down --volumes - periodically
+// docker-compose down --volumes - periodically 
+// docker run --rm -ti --gpus all -p 8080:8080 -e DEBUG=true -e MODELS_PATH=/models -e PRELOAD_MODELS='[{"url": "github:go-skynet/model-gallery/openllama_7b.yaml", "name": "gpt-3.5-turbo", "overrides": { "f16":true, "gpu_layers": 35, "mmap": true, "batch": 512 } } ]' -e THREADS=1 -e BUILD_TYPE=cublas -v $PWD/models:/models quay.io/go-skynet/local-ai:v0.19.0-cublas-cuda12
+
+=========== DEV ENV ========
+cd ~
+sudo apt-get install neovim
+mkdir .go
+mkdir .rust
+
+# activate venv in project dir
+.\venv\Scripts\activate
+
+```
