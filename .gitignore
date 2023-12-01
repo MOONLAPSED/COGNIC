@@ -1,7 +1,6 @@
 *.scratch
 /.scratch/
 /apps/
-/logs/
 *.logs
 *.env
 /mypy_cache/
