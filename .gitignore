@@ -1,3 +1,4 @@
+# /.gitignore
 *.scratch
 /.scratch/
 /apps/

@@ -1,15 +1,38 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
+# /.github/dependabot.yml
 version: 2
 updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "python"
+
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "docker"
+  
+  - package-ecosystem: "npm"
+    directory: "/"  # Adjust this if JavaScript package manifests are not in the repository root
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "node.js"
+
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 100
+    labels:
+      - "dependencies"
+      - "CI/CD"
