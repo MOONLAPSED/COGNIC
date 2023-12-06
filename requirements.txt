@@ -8,7 +8,7 @@ ipycanvas
 ipyevents
 ipywebrtc
 transformers
-requests
+torch
 numpy
 matplotlib
 pandas
@@ -16,6 +16,7 @@ scipy
 scikit-learn
 scikit-image
 sympy
+requests
 spacy
 cython
 docker
@@ -24,3 +25,4 @@ llama-cpp-python
 google.generativeai
 cohere
 litellm
+openai==0.28
