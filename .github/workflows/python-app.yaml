@@ -1,0 +1,47 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Navigate to directory with main.py and print current directory
+        run: |
+          cd /home/runner/work/wsb/wsb
+          pwd
+          ls -la
+      - name: Create log file
+        run: touch ../logs/python-app.log
+
+      - name: python-main
+        run: |
+          cd /home/runner/work/cognic/cognic
+          python setup.py 2>&1 | tee ../logs/python-app.log
+          echo "Archived contents of python-app.log."
+      - name: Archive test output as artifact
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: ../logs/python-app.log
